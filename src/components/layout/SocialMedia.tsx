@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Share2, Instagram, Twitter, Youtube, TikTok, Facebook, Mail } from 'lucide-react'
+import { Share2, Instagram, Twitter, Youtube, Facebook, Mail } from 'lucide-react'
 
 interface SocialMediaProps {
   beatTitle?: string
@@ -19,7 +19,7 @@ export default function SocialMedia({ beatTitle, beatUrl, beatImage }: SocialMed
     
     const shareUrl = beatUrl || window.location.href
     
-    const platforms = {
+    const platforms: Record<string, string> = {
       twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
       instagram: `https://www.instagram.com/?text=${encodeURIComponent(shareText)}`, // Note: Instagram doesn't have direct share URLs
@@ -66,7 +66,7 @@ export default function SocialMedia({ beatTitle, beatUrl, beatImage }: SocialMed
     },
     {
       platform: 'TikTok',
-      icon: TikTok,
+      icon: Share2,
       url: 'https://tiktok.com/@taktikalbeatz',
       color: 'text-black hover:text-gray-800',
       bgColor: 'hover:bg-gray-50',

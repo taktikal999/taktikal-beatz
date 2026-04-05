@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
     
     const formattedPurchases = purchases?.map(purchase => ({
       id: purchase.id,
-      beat_title: purchase.beats?.title || 'Unknown Beat',
+      beat_title: (purchase.beats as any)?.[0]?.title || 'Unknown Beat',
       amount: purchase.amount,
       status: purchase.status,
       created_at: purchase.created_at,

@@ -122,8 +122,8 @@ function generateStructuredData(pageType: string, pageData?: any) {
 }
 
 export function trackEvent(eventName: string, eventData?: any) {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', eventName, eventData)
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', eventName, eventData)
   }
   
   console.log('Analytics event:', eventName, eventData)

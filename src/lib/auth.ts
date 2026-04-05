@@ -43,7 +43,7 @@ export function generateToken(payload: UserPayload): string {
   return jwt.sign(payload, JWT_SECRET, {
     expiresIn: JWT_EXPIRES_IN,
     issuer: 'taktikal-beatz',
-  })
+  } as any)
 }
 
 export function verifyToken(token: string): UserPayload {
