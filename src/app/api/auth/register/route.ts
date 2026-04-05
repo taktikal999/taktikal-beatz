@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { register, validatePassword, sanitizeObject } from '@/lib/auth'
-import { getClientIP, getClientUserAgent, validateEmail } from '@/lib/security'
+import { register, validatePassword } from '@/lib/auth'
+import { sanitizeObject, getClientIP, getClientUserAgent, validateEmail } from '@/lib/security'
 import { supabaseAdmin } from '@/lib/database'
 import { z } from 'zod'
 
